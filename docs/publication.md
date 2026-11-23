@@ -27,4 +27,4 @@ The container installs Python 3.12 packages from `requirements.lock` with SHA-25
 
 The editable print source is `docs/pdf/walkthrough.html`. In a local environment with Python Playwright and its Chromium installed, run `python docs/pdf/render.py`. Alternatively set `PLAYWRIGHT_CHROMIUM_EXECUTABLE` to a local Chrome or Chromium executable. The renderer copies the same bytes to both PDF locations. Inspect the four pages after a change.
 
-The captioned video is a silent guided sequence of final walkthrough screens. The MP4 and WebM, poster, WebVTT track and HTML transcript live together in `website/vgl/media/`. Review these alongside the PDF if the recorded examples change.
+The captioned video is a narrated guided sequence of final walkthrough screens. A synthetic ElevenLabs voice reads each WebVTT caption within that caption's time range. The MP4 and WebM, poster, WebVTT track and HTML transcript live together in `website/vgl/media/`. Review these alongside the PDF if the recorded examples change.
