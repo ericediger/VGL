@@ -1,0 +1,636 @@
+{
+  "mode": "replay",
+  "corpus": "fictional GSB editions 2021 and 2025, releases 1\u20133",
+  "metrics": {
+    "cases": 13,
+    "runs": 13,
+    "pass_rate": 1.0,
+    "grounded_claim_rate": 1.0,
+    "stale_citations_caught": 0,
+    "citations_composed": 70,
+    "closure_recall": 1.0,
+    "abstention_precision": 1.0,
+    "abstention_recall": 1.0,
+    "modifier_surfaced_rate": 1.0,
+    "judge_disagreements_total": 3,
+    "baseline_runs": 13,
+    "baseline_failure_rate": 0.231,
+    "baseline_failure_rate_by_case": {
+      "G1": 0.0,
+      "G2": 1.0,
+      "G3": 0.0,
+      "G4a": 0.0,
+      "G4b": 0.0,
+      "G5": 0.0,
+      "G6": 0.0,
+      "G7": 1.0,
+      "G8": 0.0,
+      "G9": 0.0,
+      "G10": 0.0,
+      "G11a": 1.0,
+      "G11b": 0.0
+    },
+    "intake_pass_rate": 1.0
+  },
+  "layer": [
+    {
+      "id": "G1",
+      "name": "Stale clause",
+      "trap": "stale",
+      "release": 1,
+      "jurisdiction": "JN",
+      "as_of": "2025-06-01",
+      "outcome": "ANSWER",
+      "conclusion": "yes",
+      "summary": "Under 3.A.6, a new portfolio must be included in a composite on a timely and consistent basis, no later than the beginning of the first full calendar month after it comes under management.",
+      "cited": [
+        "def:composite@E2025",
+        "prov:composite-inclusion-timing@E2025"
+      ],
+      "flags": [],
+      "claims_kept": 4,
+      "claims_composed": 4,
+      "citations_composed": 4,
+      "stale_citations": 0,
+      "closure_hit": 1,
+      "closure_expected": 1,
+      "judge_disagreements": 0,
+      "failures": [],
+      "passed": true,
+      "composer_model": "claude-opus-5-5"
+    },
+    {
+      "id": "G2",
+      "name": "Jurisdiction branch",
+      "trap": "jurisdiction",
+      "release": 1,
+      "jurisdiction": "JS",
+      "as_of": "2025-06-01",
+      "outcome": "ANSWER_WITH_FLAGS",
+      "conclusion": "yes",
+      "summary": "Under 3.A.4, a new portfolio must be included in a composite on a timely and consistent basis, no later than the beginning of the second full calendar month after it comes under management, unless the firm's composite-specific policy sets an earlier date.",
+      "cited": [
+        "def:composite@E2021",
+        "prov:composite-inclusion-timing@E2021"
+      ],
+      "flags": [
+        "pending_adoption",
+        "practitioner_note"
+      ],
+      "claims_kept": 4,
+      "claims_composed": 4,
+      "citations_composed": 4,
+      "stale_citations": 0,
+      "closure_hit": 1,
+      "closure_expected": 1,
+      "judge_disagreements": 0,
+      "failures": [],
+      "passed": true,
+      "composer_model": "claude-opus-5-5"
+    },
+    {
+      "id": "G3",
+      "name": "Cross-standard interaction (definition changed, provision did not)",
+      "trap": "interaction",
+      "release": 1,
+      "jurisdiction": "JN",
+      "as_of": "2025-06-01",
+      "outcome": "ANSWER",
+      "conclusion": "depends",
+      "summary": "Likely yes: a tobacco exclusion makes the portfolio non-discretionary only if it materially impedes the strategy, so if it does not and the portfolio is fee-paying, it must be in at least one composite.",
+      "cited": [
+        "def:discretionary-portfolio@E2025",
+        "def:fee-paying-portfolio@E2025",
+        "prov:composite-inclusion-all-discretionary@E2025",
+        "prov:non-fee-paying-inclusion@E2025"
+      ],
+      "flags": [],
+      "claims_kept": 6,
+      "claims_composed": 6,
+      "citations_composed": 8,
+      "stale_citations": 0,
+      "closure_hit": 1,
+      "closure_expected": 1,
+      "judge_disagreements": 0,
+      "failures": [],
+      "passed": true,
+      "composer_model": "claude-opus-5-5"
+    },
+    {
+      "id": "G4a",
+      "name": "Unknown carve-out \u2014 Release 1 (reference not held)",
+      "trap": "carve_out",
+      "release": 1,
+      "jurisdiction": "JN",
+      "as_of": "2025-06-01",
+      "outcome": "REVIEW",
+      "conclusion": "depends",
+      "summary": "Generally yes, from the start of the next measurement period at which the portfolio is below the documented minimum, but it stays in for any period it began above the minimum, and a 40% withdrawal may engage significant-cash-flow treatment in Q&A QA-2025-031, which has not been reviewed.",
+      "cited": [
+        "def:external-cash-flow@E2025",
+        "def:measurement-period@E2025",
+        "def:significant-cash-flow@E2025",
+        "gs:GS-2025-02@v1",
+        "prov:composite-minimum@E2025"
+      ],
+      "flags": [
+        "judge_disagreement",
+        "unresolved_reference"
+      ],
+      "claims_kept": 7,
+      "claims_composed": 7,
+      "citations_composed": 10,
+      "stale_citations": 0,
+      "closure_hit": 1,
+      "closure_expected": 1,
+      "judge_disagreements": 1,
+      "failures": [],
+      "passed": true,
+      "composer_model": "claude-opus-5-5"
+    },
+    {
+      "id": "G4b",
+      "name": "Unknown carve-out \u2014 Release 2 (ruling ingested)",
+      "trap": "carve_out",
+      "release": 2,
+      "jurisdiction": "JN",
+      "as_of": "2025-06-01",
+      "outcome": "ANSWER_WITH_FLAGS",
+      "conclusion": "depends",
+      "summary": "Not necessarily: under QA-2025-031 the portfolio may stay in the composite for up to three full measurement periods if the breach results solely from a significant cash flow and your documented policy provides for this; otherwise 3.A.7 requires removal.",
+      "cited": [
+        "def:measurement-period@E2025",
+        "gs:GS-2025-02@v1",
+        "prov:composite-minimum@E2025",
+        "ruling:QA-2025-031@v1"
+      ],
+      "flags": [
+        "carve_out"
+      ],
+      "claims_kept": 7,
+      "claims_composed": 7,
+      "citations_composed": 10,
+      "stale_citations": 0,
+      "closure_hit": 1,
+      "closure_expected": 1,
+      "judge_disagreements": 0,
+      "failures": [],
+      "passed": true,
+      "composer_model": "claude-opus-5-5"
+    },
+    {
+      "id": "G5",
+      "name": "No coverage",
+      "trap": "coverage",
+      "release": 1,
+      "jurisdiction": "JN",
+      "as_of": "2025-06-01",
+      "outcome": "REVIEW",
+      "conclusion": "not_covered",
+      "summary": "The guidance held in this release does not address the question.",
+      "cited": [
+        "def:gross-of-fees-return@E2025"
+      ],
+      "flags": [],
+      "claims_kept": 1,
+      "claims_composed": 1,
+      "citations_composed": 1,
+      "stale_citations": 0,
+      "closure_hit": 0,
+      "closure_expected": 0,
+      "judge_disagreements": 0,
+      "failures": [],
+      "passed": true,
+      "composer_model": "claude-opus-5-5"
+    },
+    {
+      "id": "G6",
+      "name": "Clarify \u2014 specific case, no facts",
+      "trap": "clarify",
+      "release": 1,
+      "jurisdiction": "JN",
+      "as_of": "2025-06-01",
+      "outcome": "CLARIFY",
+      "conclusion": null,
+      "summary": "More information is needed before this can be answered.",
+      "cited": [],
+      "flags": [],
+      "claims_kept": 0,
+      "claims_composed": 0,
+      "citations_composed": 0,
+      "stale_citations": 0,
+      "closure_hit": 0,
+      "closure_expected": 0,
+      "judge_disagreements": 0,
+      "failures": [],
+      "passed": true,
+      "composer_model": null
+    },
+    {
+      "id": "G7",
+      "name": "Historical as-of",
+      "trap": "stale",
+      "release": 1,
+      "jurisdiction": "JN",
+      "as_of": "2024-06-01",
+      "outcome": "ANSWER_WITH_FLAGS",
+      "conclusion": "yes",
+      "summary": "Under 3.A.4, a new portfolio must be included in a composite on a timely and consistent basis, and no later than the beginning of the second full calendar month after it comes under management, unless the firm's composite-specific policy sets an earlier date.",
+      "cited": [
+        "def:composite@E2021",
+        "prov:composite-inclusion-timing@E2021"
+      ],
+      "flags": [
+        "upcoming_amendment"
+      ],
+      "claims_kept": 4,
+      "claims_composed": 4,
+      "citations_composed": 4,
+      "stale_citations": 0,
+      "closure_hit": 1,
+      "closure_expected": 1,
+      "judge_disagreements": 0,
+      "failures": [],
+      "passed": true,
+      "composer_model": "claude-opus-5-5"
+    },
+    {
+      "id": "G8",
+      "name": "Straightforward requirement",
+      "trap": "none",
+      "release": 1,
+      "jurisdiction": "JN",
+      "as_of": "2025-06-01",
+      "outcome": "ANSWER",
+      "conclusion": "yes",
+      "summary": "Yes \u2014 under 3.A.3, firms must make a description of any composite available to a prospective client on request.",
+      "cited": [
+        "def:composite@E2025",
+        "prov:composite-description-on-request@E2025"
+      ],
+      "flags": [],
+      "claims_kept": 3,
+      "claims_composed": 3,
+      "citations_composed": 4,
+      "stale_citations": 0,
+      "closure_hit": 1,
+      "closure_expected": 1,
+      "judge_disagreements": 0,
+      "failures": [],
+      "passed": true,
+      "composer_model": "claude-opus-5-5"
+    },
+    {
+      "id": "G9",
+      "name": "Straightforward permission with a disclosure condition",
+      "trap": "none",
+      "release": 1,
+      "jurisdiction": "JN",
+      "as_of": "2025-06-01",
+      "outcome": "ANSWER",
+      "conclusion": "yes",
+      "summary": "Yes \u2014 under 3.A.2, non-fee-paying discretionary portfolios may be included in a composite, but if included the firm must disclose the percentage of composite assets they represent as of each annual period end.",
+      "cited": [
+        "def:discretionary-portfolio@E2025",
+        "def:fee-paying-portfolio@E2025",
+        "prov:composite-inclusion-all-discretionary@E2025",
+        "prov:non-fee-paying-inclusion@E2025"
+      ],
+      "flags": [],
+      "claims_kept": 5,
+      "claims_composed": 5,
+      "citations_composed": 7,
+      "stale_citations": 0,
+      "closure_hit": 1,
+      "closure_expected": 1,
+      "judge_disagreements": 0,
+      "failures": [],
+      "passed": true,
+      "composer_model": "claude-opus-5-5"
+    },
+    {
+      "id": "G10",
+      "name": "Obligation tier \u2014 recommendation, not requirement",
+      "trap": "obligation",
+      "release": 1,
+      "jurisdiction": "JN",
+      "as_of": "2025-06-01",
+      "outcome": "ANSWER_WITH_FLAGS",
+      "conclusion": "no",
+      "summary": "Not strictly required: 3.B.1 says firms should not apply changes to a composite minimum retroactively, which is a recommendation rather than a mandatory requirement.",
+      "cited": [
+        "def:composite@E2025",
+        "prov:composite-minimum-no-retroactive-change@E2025"
+      ],
+      "flags": [
+        "recommendation_not_requirement"
+      ],
+      "claims_kept": 3,
+      "claims_composed": 3,
+      "citations_composed": 3,
+      "stale_citations": 0,
+      "closure_hit": 1,
+      "closure_expected": 1,
+      "judge_disagreements": 0,
+      "failures": [],
+      "passed": true,
+      "composer_model": "claude-opus-5-5"
+    },
+    {
+      "id": "G11a",
+      "name": "Scene A \u2014 before the amendment takes effect",
+      "trap": "amendment",
+      "release": 3,
+      "jurisdiction": "JN",
+      "as_of": "2026-11-15",
+      "outcome": "ANSWER_WITH_FLAGS",
+      "conclusion": "depends",
+      "summary": "It depends: fully waived employee accounts still count as fee-paying under 1.D.6 if they are subject to the firm's fee schedule, and must then be in a composite if discretionary under 3.A.1.",
+      "cited": [
+        "def:discretionary-portfolio@E2025",
+        "def:fee-paying-portfolio@E2025",
+        "prov:composite-inclusion-all-discretionary@E2025",
+        "prov:non-fee-paying-inclusion@E2025"
+      ],
+      "flags": [
+        "judge_disagreement",
+        "upcoming_amendment"
+      ],
+      "claims_kept": 7,
+      "claims_composed": 7,
+      "citations_composed": 8,
+      "stale_citations": 0,
+      "closure_hit": 1,
+      "closure_expected": 1,
+      "judge_disagreements": 1,
+      "failures": [],
+      "passed": true,
+      "composer_model": "claude-opus-5-5"
+    },
+    {
+      "id": "G11b",
+      "name": "Scene A \u2014 after the amendment takes effect",
+      "trap": "amendment",
+      "release": 3,
+      "jurisdiction": "JN",
+      "as_of": "2026-12-15",
+      "outcome": "ANSWER_WITH_FLAGS",
+      "conclusion": "depends",
+      "summary": "Not required if the employees count as related parties: fully waived accounts of related parties are not fee-paying under 1.D.6, so 3.A.1's mandatory inclusion does not apply, though they may be included with disclosure.",
+      "cited": [
+        "def:discretionary-portfolio@E2025",
+        "def:fee-paying-portfolio@E2025-A1",
+        "prov:composite-inclusion-all-discretionary@E2025",
+        "prov:non-fee-paying-inclusion@E2025"
+      ],
+      "flags": [
+        "judge_disagreement"
+      ],
+      "claims_kept": 6,
+      "claims_composed": 6,
+      "citations_composed": 7,
+      "stale_citations": 0,
+      "closure_hit": 1,
+      "closure_expected": 1,
+      "judge_disagreements": 1,
+      "failures": [],
+      "passed": true,
+      "composer_model": "claude-opus-5-5"
+    }
+  ],
+  "baseline": [
+    {
+      "id": "G1",
+      "name": "Stale clause",
+      "trap": "stale",
+      "conclusion": "yes",
+      "answer": "Under the current GSB Standards (Edition 2025), a new portfolio must be included in a composite on a timely and consistent basis, and no later than the beginning of the first full calendar month after it comes under management; the firm must also document the inclusion date applied for each composite. This replaces the more lenient 2021 rule, which allowed inclusion as late as the beginning of the second full calendar month unless the firm's composite policy specified an earlier date. Separately, a portfolio below a documented composite minimum must not be included at all, so the deadline applies only to portfolios that meet any minimum.",
+      "cited_versions": [
+        "prov:composite-inclusion-timing@E2025",
+        "prov:composite-inclusion-timing@E2021",
+        "prov:composite-inclusion-all-discretionary@E2025",
+        "gs:GS-2025-02@v1"
+      ],
+      "failed": false,
+      "failure_reasons": [],
+      "model": "claude-opus-5-5"
+    },
+    {
+      "id": "G2",
+      "name": "Jurisdiction branch",
+      "trap": "jurisdiction",
+      "conclusion": "yes",
+      "answer": "Under the current GSB Standards (Edition 2025), a new portfolio must be included in a composite on a timely and consistent basis, and no later than the beginning of the first full calendar month after it comes under management; the firm must also document the inclusion date applied for each composite. This replaces the more lenient 2021 rule, which allowed inclusion as late as the beginning of the second full calendar month unless the firm's composite policy specified an earlier date. Separately, a portfolio below a documented composite minimum must not be included at all, so the deadline applies only to portfolios that meet any minimum.",
+      "cited_versions": [
+        "prov:composite-inclusion-timing@E2025",
+        "prov:composite-inclusion-timing@E2021",
+        "prov:composite-inclusion-all-discretionary@E2025",
+        "gs:GS-2025-02@v1"
+      ],
+      "failed": true,
+      "failure_reasons": [
+        "cited prov:composite-inclusion-timing@E2025",
+        "answer says 'first full'"
+      ],
+      "model": "claude-opus-5-5"
+    },
+    {
+      "id": "G3",
+      "name": "Cross-standard interaction (definition changed, provision did not)",
+      "trap": "interaction",
+      "conclusion": "depends",
+      "answer": "Probably yes. A client restriction makes a portfolio non-discretionary only if it materially impedes the firm's ability to implement its intended strategy [5]. If excluding tobacco stocks does not materially impede the strategy, the portfolio stays discretionary, and if it is fee-paying it must be included in at least one composite [1]. Whether the restriction is material depends on the strategy (for example, it is minor for a broad equity mandate but could matter for a consumer-staples or sector-focused one), and you must document the basis for your determination either way [5].",
+      "cited_versions": [
+        "prov:composite-inclusion-all-discretionary@E2025",
+        "def:discretionary-portfolio@E2025"
+      ],
+      "failed": false,
+      "failure_reasons": [],
+      "model": "claude-opus-5-5"
+    },
+    {
+      "id": "G4a",
+      "name": "Unknown carve-out \u2014 Release 1 (reference not held)",
+      "trap": "carve_out",
+      "conclusion": "depends",
+      "answer": "Not immediately. Under 3.A.7 portfolios below a documented composite minimum must not be included, but GS-2025-02 says the test is applied at the beginning of each measurement period, and a portfolio above the minimum at that point stays in the composite for the whole period. So last month's withdrawal does not require removal mid-period. If the portfolio is still below the minimum at the start of the next measurement period, it would generally have to be excluded. However, because the shortfall comes from a significant cash flow, the Board's specific treatment of such temporary breaches is set out in Q&A QA-2025-031, which is not among these passages, so you should check it before deciding.",
+      "cited_versions": [
+        "prov:composite-minimum@E2025",
+        "gs:GS-2025-02@v1"
+      ],
+      "failed": false,
+      "failure_reasons": [],
+      "model": "claude-opus-5-5"
+    },
+    {
+      "id": "G4b",
+      "name": "Unknown carve-out \u2014 Release 2 (ruling ingested)",
+      "trap": "carve_out",
+      "conclusion": "depends",
+      "answer": "Not necessarily. Provision 3.A.7 generally prohibits including portfolios below a documented composite minimum, but where the breach results solely from a significant cash flow (as defined in your documented composite policy), the portfolio may remain in the composite for up to three full measurement periods after the cash flow. This applies only if your composite policy provides for this treatment and you document the determination at the time it is made. If the portfolio is still below the minimum at the end of that period, it must be removed; and if your policy does not provide for this treatment, or the 40% withdrawal does not meet your significant cash flow definition, the general rule requiring exclusion applies.",
+      "cited_versions": [
+        "ruling:QA-2025-031@v1",
+        "gs:GS-2025-02@v1",
+        "prov:composite-minimum@E2025"
+      ],
+      "failed": false,
+      "failure_reasons": [],
+      "model": "claude-opus-5-5"
+    },
+    {
+      "id": "G5",
+      "name": "No coverage",
+      "trap": "coverage",
+      "conclusion": "not_covered",
+      "answer": "None of the provided passages address staking rewards or digital assets, so the standards excerpted here do not say how such rewards should be treated in composite returns. The passages cover only the definition of a composite (1.D.1), the inclusion of non-fee-paying portfolios and the related disclosure (3.A.2), and the timing for adding new portfolios to composites (3.A.6 in the 2025 edition, 3.A.4 in the 2021 edition). For guidance on staking income, you would need to consult other sections of the standards or separate guidance on return calculation and income recognition.",
+      "cited_versions": [],
+      "failed": false,
+      "failure_reasons": [],
+      "model": "claude-opus-5-5"
+    },
+    {
+      "id": "G6",
+      "name": "Clarify \u2014 specific case, no facts",
+      "trap": "clarify",
+      "conclusion": "depends",
+      "answer": "It depends on the portfolio's characteristics, which the question does not specify. Under both the 2021 and 2025 editions, every actual, fee-paying, discretionary portfolio must be included in at least one composite, while non-fee-paying discretionary portfolios may be included but are not required to be; if they are included, the firm must disclose the percentage of composite assets they represent as of each annual period end. Where inclusion is required, the 2025 edition requires a new portfolio to be added no later than the beginning of the first full calendar month after it comes under management, with the inclusion date documented. The 2021 edition allowed until the second full calendar month, unless the firm's composite policy specified an earlier date.",
+      "cited_versions": [
+        "prov:composite-inclusion-timing@E2025",
+        "prov:composite-inclusion-all-discretionary@E2021",
+        "prov:composite-inclusion-all-discretionary@E2025",
+        "prov:composite-inclusion-timing@E2021",
+        "prov:non-fee-paying-inclusion@E2021",
+        "prov:non-fee-paying-inclusion@E2025"
+      ],
+      "failed": false,
+      "failure_reasons": [],
+      "model": "claude-opus-5-5"
+    },
+    {
+      "id": "G7",
+      "name": "Historical as-of",
+      "trap": "stale",
+      "conclusion": "yes",
+      "answer": "Under the current GSB Standards (Edition 2025), a new portfolio must be included in a composite on a timely and consistent basis, and no later than the beginning of the first full calendar month after it comes under management; the firm must also document the inclusion date applied for each composite. This replaces the more lenient 2021 rule, which allowed inclusion as late as the beginning of the second full calendar month unless the firm's composite policy specified an earlier date. Separately, a portfolio below a documented composite minimum must not be included at all, so the deadline applies only to portfolios that meet any minimum.",
+      "cited_versions": [
+        "prov:composite-inclusion-timing@E2025",
+        "prov:composite-inclusion-timing@E2021",
+        "prov:composite-inclusion-all-discretionary@E2025",
+        "gs:GS-2025-02@v1"
+      ],
+      "failed": true,
+      "failure_reasons": [
+        "cited prov:composite-inclusion-timing@E2025",
+        "answer says 'first full'"
+      ],
+      "model": "claude-opus-5-5"
+    },
+    {
+      "id": "G8",
+      "name": "Straightforward requirement",
+      "trap": "none",
+      "conclusion": "yes",
+      "answer": "Yes. Under 3.A.3, firms must make a description of any composite available to any prospective client who requests it. This requirement is identical in the 2021 and 2025 editions, so the answer does not depend on which edition applies. Relatedly, the 2025 edition (3.A.4) requires each composite definition, including its inclusion and exclusion criteria, to be documented in writing, which supports your ability to meet such requests.",
+      "cited_versions": [
+        "prov:composite-description-on-request@E2021",
+        "prov:composite-description-on-request@E2025",
+        "prov:composite-definition-documented@E2025"
+      ],
+      "failed": false,
+      "failure_reasons": [],
+      "model": "claude-opus-5-5"
+    },
+    {
+      "id": "G9",
+      "name": "Straightforward permission with a disclosure condition",
+      "trap": "none",
+      "conclusion": "yes",
+      "answer": "Yes. Under 3.A.2, non-fee-paying discretionary portfolios may be included in a composite; this is unchanged between the 2021 and 2025 editions. If you include them, you must disclose the percentage of composite assets represented by non-fee-paying portfolios as of each annual period end. Inclusion is optional, unlike fee-paying discretionary portfolios, which must be included in at least one composite (3.A.1). Also note that a portfolio whose fee is reduced or waived may still count as fee-paying if it is subject to the firm's fee schedule (2021 definition 1.D.5), so confirm the classification before treating a portfolio as non-fee-paying.",
+      "cited_versions": [
+        "prov:non-fee-paying-inclusion@E2021",
+        "prov:non-fee-paying-inclusion@E2025",
+        "prov:composite-inclusion-all-discretionary@E2021",
+        "prov:composite-inclusion-all-discretionary@E2025",
+        "def:fee-paying-portfolio@E2021"
+      ],
+      "failed": false,
+      "failure_reasons": [],
+      "model": "claude-opus-5-5"
+    },
+    {
+      "id": "G10",
+      "name": "Obligation tier \u2014 recommendation, not requirement",
+      "trap": "obligation",
+      "conclusion": "no",
+      "answer": "No, it is not a strict requirement. Under both the 2021 and 2025 editions, provision 3.B.1 says firms \"should not\" apply changes to a composite minimum retroactively, and GS-2025-02 explicitly calls 3.B.1 a recommendation. Avoiding retroactive changes is therefore recommended best practice rather than a mandatory provision. The guidance expects any change to a composite minimum to apply prospectively from the beginning of the next measurement period, so following that approach is strongly advisable.",
+      "cited_versions": [
+        "prov:composite-minimum-no-retroactive-change@E2021",
+        "prov:composite-minimum-no-retroactive-change@E2025",
+        "gs:GS-2025-02@v1"
+      ],
+      "failed": false,
+      "failure_reasons": [],
+      "model": "claude-opus-5-5"
+    },
+    {
+      "id": "G11a",
+      "name": "Scene A \u2014 before the amendment takes effect",
+      "trap": "amendment",
+      "conclusion": "no",
+      "answer": "No, provided the employee accounts are related-party portfolios with all investment management fees waived in full. Amendment 2025-A1 revises definition 1.D.6 so these portfolios are no longer fee-paying, which means the mandatory inclusion rule in 3.A.1 (all actual, fee-paying, discretionary portfolios) does not apply to them. Under the unamended Edition 2025 definition they had to be included. Under 3.A.2 the firm may still choose to include them as non-fee-paying discretionary portfolios, but it must then disclose the percentage of composite assets they represent at each annual period end. Accounts whose fees are only partly reduced remain fee-paying and must still be included.",
+      "cited_versions": [
+        "def:fee-paying-portfolio@E2025-A1",
+        "prov:composite-inclusion-all-discretionary@E2025",
+        "prov:non-fee-paying-inclusion@E2025"
+      ],
+      "failed": true,
+      "failure_reasons": [
+        "cited def:fee-paying-portfolio@E2025-A1",
+        "conclusion 'no'"
+      ],
+      "model": "claude-opus-5-5"
+    },
+    {
+      "id": "G11b",
+      "name": "Scene A \u2014 after the amendment takes effect",
+      "trap": "amendment",
+      "conclusion": "no",
+      "answer": "No, provided the employee accounts are related-party portfolios with all investment management fees waived in full. Amendment 2025-A1 revises definition 1.D.6 so these portfolios are no longer fee-paying, which means the mandatory inclusion rule in 3.A.1 (all actual, fee-paying, discretionary portfolios) does not apply to them. Under the unamended Edition 2025 definition they had to be included. Under 3.A.2 the firm may still choose to include them as non-fee-paying discretionary portfolios, but it must then disclose the percentage of composite assets they represent at each annual period end. Accounts whose fees are only partly reduced remain fee-paying and must still be included.",
+      "cited_versions": [
+        "def:fee-paying-portfolio@E2025-A1",
+        "prov:composite-inclusion-all-discretionary@E2025",
+        "prov:non-fee-paying-inclusion@E2025"
+      ],
+      "failed": false,
+      "failure_reasons": [],
+      "model": "claude-opus-5-5"
+    }
+  ],
+  "intake": [
+    {
+      "id": "M1",
+      "passed": true,
+      "detail": "as_of=None facts={}"
+    },
+    {
+      "id": "M2",
+      "passed": true,
+      "detail": "jurisdiction=None facts={}"
+    },
+    {
+      "id": "M3",
+      "passed": true,
+      "detail": "unresolved=[\"withdrawal date: 'last month' (no anchor date given)\", 'composite minimum: amount not specified']"
+    },
+    {
+      "id": "M4",
+      "passed": true,
+      "detail": "facts={'client restriction': 'no tobacco stocks', 'portfolio otherwise follows the strategy': 'yes'} missing=[]"
+    },
+    {
+      "id": "M5",
+      "passed": true,
+      "detail": "missing=['whether the portfolio is discretionary', 'whether the portfolio is fee-paying', \"whether the portfolio's strategy matches an existing composite definition\"]"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: vgl
+      POSTGRES_PASSWORD: vgl
+      POSTGRES_DB: vgl
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vgl -d vgl"]
+      interval: 3s
+      timeout: 3s
+      retries: 25
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://vgl:vgl@db:5432/vgl
+      VGL_LLM_MODE: replay
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  pgdata:

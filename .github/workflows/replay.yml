@@ -1,0 +1,15 @@
+name: Local replay
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: docker compose up -d --build --wait
+      - run: curl --fail --retry 12 --retry-all-errors http://127.0.0.1:8000/api/health
+      - run: docker compose run --rm app pytest
