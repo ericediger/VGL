@@ -10,4 +10,4 @@ The source package includes dependency declarations and a hash-pinned Python loc
 
 The database service uses the upstream pgvector image for PostgreSQL. Consult the notices supplied by those distributions, including the PostgreSQL license, and the license files installed with each wheel. Runtime dependencies retain their upstream terms.
 
-The interface uses system fonts. The diagram, screenshots, video frames, captions, poster and PDF were prepared for this edition. The video has no voice or music track. The fixture directory contains the project's saved model inputs, responses and vectors for its fictional evaluation set.
+The interface uses system fonts. The diagram, screenshots, video frames, captions, poster and PDF were prepared for this edition. The narration is a synthetic voice generated with ElevenLabs from the caption text. The video has no music track. The fixture directory contains the project's saved model inputs, responses and vectors for its fictional evaluation set.

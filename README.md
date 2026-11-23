@@ -2,7 +2,7 @@
 
 [![Watch the 75-second walkthrough](website/vgl/media/poster.jpg)](https://ericediger.github.io/VGL/website/vgl/media/vgl-walkthrough.mp4)
 
-**[▶ Watch the 75-second walkthrough](https://ericediger.github.io/VGL/website/vgl/media/vgl-walkthrough.mp4)** · silent, with captions · [transcript](https://ericediger.github.io/VGL/website/vgl/media/transcript.html)
+**[▶ Watch the 75-second walkthrough](https://ericediger.github.io/VGL/website/vgl/media/vgl-walkthrough.mp4)** · narrated, with captions · [transcript](https://ericediger.github.io/VGL/website/vgl/media/transcript.html)
 
 The video steps through the recorded walkthrough, which is exported from this repository's replay run on a fictional corpus. [Step through the walkthrough yourself](https://ericediger.github.io/VGL/website/vgl/#1.1).
 
